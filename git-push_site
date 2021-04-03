@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# First, restore 'site/static/admin/config.yml' to contents of corresponding .bak file
+mv -f site/static/admin/config.yml.bak site/static/admin/config.yml
+
+# Now, 'git add...' the file to stage it, and commit
+git add site/static/admin/config.yml 
+git commit -m "Returned site/static/admin/config.yml to producton ready"
+
+# And push it
+git push
+
+# And signal that we are done
+echo "'git push_site' command is finished"

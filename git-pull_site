@@ -1,0 +1,21 @@
+#!/bin/sh
+
+FILE=site/static/admin/config.yml
+
+# Check that our target file exists where we expect it...
+if [[ ! -f "$FILE" ]]; then
+  echo "$FILE does not exist. Run this command from the project root directory!"
+  exit 1
+fi
+
+# First, 'git pull'
+git pull
+
+# Now, use 'sed' to make the necessary file substitution, with backup
+sed -i.bak -e's|folder: site/|folder: |' site/static/admin/config.yml
+
+# Next, start the netlify-cms-proxy-server on the local host...
+npx netlify-cms-proxy-server &
+
+# And signal that we are done
+echo "'git pull_site' command is finished"

@@ -1,4 +1,7 @@
 #!/bin/sh
+# git-pull_site
+#   Clone this repo to your ~ (home) directory and add this project directory to your PATH.
+#   Make sure the two scripts are eXecutable.
 
 FILE=site/static/admin/config.yml
 

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# git-push_site
+#   Clone this repo to your ~ (home) directory and add this project directory to your PATH.
+#   Make sure the two scripts are eXecutable.
+
 # First, restore 'site/static/admin/config.yml' to contents of corresponding .bak file
 mv -f site/static/admin/config.yml.bak site/static/admin/config.yml
 
